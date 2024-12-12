@@ -44,7 +44,7 @@ const Add = ({token}) => {
         setImage1(false); setImage2(false);
         setImage3(false); setImage4(false);
         setPrice(""); setCategory("Men");
-        setSubCategory("Topwear"); setSizes([]);
+        setSubCategory("Topwear"); setSizes([]); setBestseller(false);
       }
       else{
         toast.error(response.data.message)
@@ -140,7 +140,7 @@ const Add = ({token}) => {
       </div>
 
       <div className='flex gap-2 mt-2'>
-        <input onChange={() => setBestseller(prev => !prev)} checked={bestseller} type="checkbox" id='bestseller' />
+        <input onChange={(e) => setBestseller(e.target.checked)} checked={bestseller} type="checkbox" id='bestseller' />
         <label className='cursor-pointer' htmlFor="bestseller">Add to bestseller</label>
       </div>
 
