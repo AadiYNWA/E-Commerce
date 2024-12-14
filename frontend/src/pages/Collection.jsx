@@ -36,7 +36,6 @@ const Collection = () => {
     if(showSearch && search){
       productsCopy = productsCopy.filter(item => item.name.toLowerCase().includes(search.toLowerCase()))
     }
-    console.log(category);
     if (category.length > 0) {
       productsCopy = productsCopy.filter(item => category.includes(item.category))
     }
