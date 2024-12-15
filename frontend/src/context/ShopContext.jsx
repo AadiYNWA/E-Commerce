@@ -84,6 +84,11 @@ const ShopContextProvider = (props) => {
             if(response.data.success){
                 setCartItems(response.data.cartData);
             }
+            else if (response.data.message === "TokenExpiredError"){
+                localStorage.removeItem("token");
+                setToken("");
+                setCartItems({});
+            }
             else{
                 toast.error(response.data.message);
             }
